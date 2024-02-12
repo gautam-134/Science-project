@@ -54,23 +54,36 @@ function Dashboard() {
     };
 
     return (
-        <div className='project-container'>
+        <div className="project-container">
             <div className="project-wrapper">
-                <div className="display-box"
-                     onDragOver={handleDragOver}
-                     onDrop={handleDrop}
-                     style={{ border: '2px dashed #000', padding: '20px', cursor: 'pointer' }}>
-                    {imageURL && <img src={imageURL} alt="Uploaded" style={{ width: '300px', height: '300px' }} />}
-                    {!imageURL && <p>Drag and drop an image here, or click to select a file</p>}
-                </div>
-                <div className="input-way">
-                    <input type="file" name="image" onChange={handleImageChange} style={{ display: 'none' }} />
-                </div>
-                <div className="check-button">
-                    <button onClick={handleSubmit}>Submit</button>
-                </div>
-                <div className="display-way ">
-                    <textarea value={message} readOnly cols="30" rows="10"></textarea>
+                <div className="upload-area">
+                    <div className="heading">
+                        <h1>Recycling</h1>
+                    </div>
+                    <div className="display-box"
+                        onDragOver={handleDragOver}
+                        onDrop={handleDrop}
+                        style={{ border: '2px dashed #000', padding: '20px', cursor: 'pointer' }}>
+                        {imageURL && <img src={imageURL} alt="Uploaded" style={{ width: '300px', height: '300px' }} />}
+                        {!imageURL && <p>Drag and drop an image here, or click to select a file</p>}
+                    </div>
+                    <div className="input-way">
+                        <input type="file" name="image" onChange={handleImageChange} style={{ display: 'none' }} />
+                    </div>
+                    <div className="display-way">
+                        <textarea value={message} readOnly cols="30" rows="10"className='answer' ></textarea>
+                    </div>
+                    <div class="buttons">
+                        <div class="upload">
+                            <button class="upload-button">Choose file</button>
+                        </div>
+                        <div class="reset">
+                            <input type="reset" class="reset-button"/>
+                        </div>
+                        <div className="check-button">
+                            <button onClick={handleSubmit} className='submit-button'>Submit</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
