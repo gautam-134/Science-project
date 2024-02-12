@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './index.css'
 function Dashboard() {
     const [image, setImage] = useState(null);
     const [imageURL, setImageURL] = useState(null);
@@ -69,7 +69,7 @@ function Dashboard() {
                 <div className="check-button">
                     <button onClick={handleSubmit}>Submit</button>
                 </div>
-                <div className="display-way">
+                <div className="display-way ">
                     <textarea value={message} readOnly cols="30" rows="10"></textarea>
                 </div>
             </div>
