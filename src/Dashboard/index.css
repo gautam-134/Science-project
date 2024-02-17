@@ -1,3 +1,4 @@
+
 *{
     box-sizing: border-box;
     margin:0px;
@@ -81,4 +82,40 @@
 .submit-button {
     background-color: #4E9ECF;
     color: #ffffff;
+}
+@media  (min-width:220px) and (max-width:700px) {
+    .project-container{
+        display:none;
+    }
+}
+@media  (min-width:701px) and (max-width:2900px) {
+    .mobile-view{
+        display:none;
+    }
+}
+.mobile-view{
+    height:100vh;
+}
+.mobile-top{
+    height:15%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #001A31;
+    font-size:18px;
+}
+.mobile-center{
+    height:70%;
+    background-image: url(../../src/assets/DALL·E-2024-02-12-18.04.jpg); 
+}
+.mobile-bottom{
+    height:15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mobile-navigation{
+    color: #001A31;
+    font-size:30px;
 }

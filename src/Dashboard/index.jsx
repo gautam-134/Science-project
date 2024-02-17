@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './index.css'
+import { Camera } from 'lucide-react';
 function Dashboard() {
     const [image, setImage] = useState(null);
     const [imageURL, setImageURL] = useState(null);
@@ -54,6 +55,7 @@ function Dashboard() {
     };
 
     return (
+        <>
         <div className="project-container">
             <div className="project-wrapper">
                 <div className="upload-area">
@@ -87,6 +89,21 @@ function Dashboard() {
                 </div>
             </div>
         </div>
+        <div className='mobile-view'>
+            <div className="mobile-top">
+                <h1>Recycle</h1>
+            </div>
+            <div className="mobile-center">
+                <div className="mobile-center-container">
+                </div>
+            </div>
+            <div className="mobile-bottom">
+                <div className="mobile-navigation">
+                <Camera size={43} />
+                </div>
+            </div>
+        </div>
+        </>
     );
 }
 
