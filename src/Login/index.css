@@ -177,3 +177,8 @@ html {
     }
   }
   
+  @media  (min-width:320px) and (max-width:410px) {
+  .login-box{
+    width: 280px;
+  }
+  }
