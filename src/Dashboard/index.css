@@ -1,121 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    margin:0px;
-}
-.project-container{
-    height:100vh;
-    width:100vw;
-    font-family: Arial, sans-serif;
-    background-image: url(../../src/assets/DALL·E-2024-02-12-18.04.jpg); 
-} 
-.project-wrapper{
-    /* flex-grow: 1;  */
-    height:100%; 
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-}
-/* .card {
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(17, 25, 40, 0.75);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
-} */
-.upload-area {
-    width:35%;
-    text-align: center;
-    background: #9cc5df;
-    padding-top:3% ;
-    border-radius: 10px;
-    box-shadow: 17px 14px 39px 0px rgba(0,0,0,0.72)
-}
-.heading h1 {
-    color: #001A31;
-    font-size:35px;
-    padding-bottom: 20px;
-}
-/* .display-box{
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    padding:9%;
-    width:120px;
-    height:120px;
-}  */
-.answer{
-    width:72%;
-    height:70px;
-    margin: 5% 13%;
-    padding:15px;
-    border: 2px solid #001A31;
-    border-radius:9px ;
-    background-color: #fffff5;
-    box-shadow:15px 15px 20px 0px rgba(0,0,0,0.72) ;
-}
-.buttons{
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    height:80px;
-    border:1px solid #001A31;
-    border-radius: 10px ;
-    background-color: #001A31;
-}
-.upload-button, .submit-button, .reset-button{
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
+    overflow: hidden;
+    font-family: "Poppins";
     font-size: 16px;
 }
-.reset-button{
-    background-color: #ffffff;
-    color: #001A31;
-    font-weight:550;
+
+#body {
+    height: 100vh;
+    width: 100vw;
+    --s: 37px;
+    --c: #0000, #282828 0.5deg 119.5deg, #0000 120deg;
+    --g1: conic-gradient(from 60deg at 56.25% calc(425% / 6), var(--c));
+    --g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
+    --g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
+    background: var(--g1), var(--g1) var(--s) calc(1.73 * var(--s)), var(--g2),
+        var(--g2) var(--s) calc(1.73 * var(--s)), var(--g3) var(--s) 0,
+        var(--g3) 0 calc(1.73 * var(--s)) #1e1e1e;
+    background-size: calc(2 * var(--s)) calc(3.46 * var(--s));
+    display: flex;
+    flex-direction: row;
+    padding-block: 1rem;
+    color: white;
 }
-.upload-button {
-    background-color:#3e6a85;
-    color: #ffffff;
-}
-.submit-button {
-    background-color: #4E9ECF;
-    color: #ffffff;
-}
-@media  (min-width:220px) and (max-width:700px) {
-    .project-container{
-        display:none;
+
+@media screen and (max-width:600px) {
+    #body {
+        display: flex;
+        gap: 2rem;
+        flex-direction: column-reverse;
+    }
+
+    .file-upload-design p {
+        display: none;
+    }
+
+    .image {
+        min-height: 50%;
+    }
+
+    .file-upload-form {
+        width: 74vw !important;
+    }
+
+    #button-mobile {
+        display: block;
     }
 }
-@media  (min-width:701px) and (max-width:2900px) {
-    .mobile-view{
-        display:none;
+
+.file-upload-form {
+    width: 45vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-upload-label input {
+    display: none;
+}
+
+.file-upload-label svg {
+    height: 50px;
+    fill: rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
+.file-upload-label {
+    cursor: pointer;
+    width: 100%;
+    background-color: #363636;
+    padding: 30px 70px;
+    border-radius: 1.5rem;
+    border: 2px dashed rgb(107, 107, 107);
+    box-shadow: 0px 0px 200px -50px rgba(0, 0, 0, 0.719);
+}
+
+.file-upload-design {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.browse-button {
+    background-color: rgb(26, 26, 26);
+    padding: 5px 15px;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.browse-button:hover {
+    background-color: rgb(14, 14, 14);
+}
+
+@media screen and (min-width:600px) {
+    #button-mobile {
+        display: none;
     }
+
+    .image,
+    .output {
+        width: 50vw;
+    }
+
 }
-.mobile-view{
-    height:100vh;
+
+.image,
+.output {
+    padding: 3rem;
+    margin-inline: 1rem;
+    background-color: rgba(0, 0, 0, 0.384);
+    border: 1px solid rgba(255, 255, 255, 0.222);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 1rem;
 }
-.mobile-top{
-    height:15%;
-    font-family: Arial, sans-serif;
+
+.image {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    color: #001A31;
-    font-size:18px;
 }
-.mobile-center{
-    height:70%;
-    background-image: url(../../src/assets/DALL·E-2024-02-12-18.04.jpg); 
-}
-.mobile-bottom{
-    height:15%;
+
+#buttons {
     display: flex;
-    justify-content: center;
+    padding-top: 1rem;
+    gap: 2rem;
+}
+
+#button-reset,
+#button-submit,
+#button-mobile {
+    --bg: #0a0a0a;
+    --hover-bg: #aaff90;
+    --hover-bg2: #d43a3a;
+    --hover-text: #000;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid var(--bg);
+    border-radius: 4px;
+    padding: 0.8em 2em;
+    background: var(--bg);
+    transition: 0.2s;
+}
+
+#button-submit:hover {
+    color: var(--hover-text);
+    transform: translate(-0.25rem, -0.25rem);
+    background: var(--hover-bg);
+    box-shadow: 0.25rem 0.25rem var(--bg);
+}
+
+#button-reset:hover {
+    color: var(--hover-text);
+    transform: translate(-0.25rem, -0.25rem);
+    background: var(--hover-bg2);
+    box-shadow: 0.25rem 0.25rem var(--bg);
+}
+
+#button-submit:active {
+    transform: translate(0);
+    box-shadow: none;
+}
+
+#button-reset:active {
+    transform: translate(0);
+    box-shadow: none;
+}
+
+.output {
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
-.mobile-navigation{
-    color: #001A31;
-    font-size:30px;
+
+.output h2 {
+    font-size: 2rem;
+    padding-bottom: 2rem;
+}
+
+textarea {
+    background-color: #282828;
+    height: 100%;
+    width: 100%;
+}
+
+hr {
+    width: 100%;
 }
